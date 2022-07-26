@@ -5,7 +5,7 @@ npm module for [inspector-bokeh](https://github.com/timotgl/inspector-bokeh)
 ## Installation
 
 ```
-npm install blur-detector
+npm i blurdetector
 ```
 
 ## Usage

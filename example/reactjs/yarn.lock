@@ -370,9 +370,9 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-"blur-detector@https://github.com/luthfikhan/blur-detector.git":
+"blurdetector@https://github.com/luthfikhan/blurdetector.git":
   version "1.0.0"
-  resolved "https://github.com/luthfikhan/blur-detector.git#266ccb76b3ecd44a2e7b50fccf46569cb88e532e"
+  resolved "https://github.com/luthfikhan/blurdetector.git#8630fdddb5bee48249ab1b7e9881a86a83c373e0"
   dependencies:
     canvas "^2.9.3"
 

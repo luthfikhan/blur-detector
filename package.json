@@ -1,5 +1,5 @@
 {
-  "name": "blur-detector",
+  "name": "blurdetector",
   "version": "1.0.0",
   "description": "Detect blur in an image",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "blur",
     "inspector bokeh"
   ],
-  "homepage": "https://github.com/luthfikhan/blur-detector",
+  "homepage": "https://github.com/luthfikhan/blurdetector",
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.9.3"

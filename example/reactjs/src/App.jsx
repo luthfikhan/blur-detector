@@ -1,5 +1,5 @@
 import { useState } from "react";
-import blurDetector from "blur-detector";
+import blurDetector from "blurdetector";
 import "./App.css";
 
 function App() {

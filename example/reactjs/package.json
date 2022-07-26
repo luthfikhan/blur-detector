@@ -1,5 +1,5 @@
 {
-  "name": "ex-blur-detector",
+  "name": "reactjs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "blur-detector": "https://github.com/luthfikhan/blur-detector.git"
+    "blurdetector": "https://github.com/luthfikhan/blurdetector.git"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
