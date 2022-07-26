@@ -1,9 +1,15 @@
 {
   "name": "blur-detector",
   "version": "1.0.0",
-  "description": "",
+  "description": "Detect blur in an image",
   "main": "index.js",
-  "author": "",
+  "author": "Luthfi Khoirul Anwar (https://profile.filab.id)",
+  "keywords": [
+    "blur detector",
+    "blur",
+    "inspector bokeh"
+  ],
+  "homepage": "https://github.com/luthfikhan/blur-detector",
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.9.3"
