@@ -5,8 +5,8 @@ const { createCanvas, loadImage } = canvasModule;
 /**
  * @param  {String|Buffer} src
  */
-const blurDetector = async (src) => {
-  return new Promise((resolve, reject) => {
+const blurDetector = (src) => {
+  return new Promise(async (resolve, reject) => {
     try {
       const image = await loadImage(src);
       const canvas = createCanvas(image.width, image.height);
