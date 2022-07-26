@@ -1,0 +1,12 @@
+{
+  "name": "blur-detector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.9.3",
+    "canvasfilters": "git://github.com/kig/canvasfilters.git"
+  }
+}
