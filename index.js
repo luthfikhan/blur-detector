@@ -5,21 +5,15 @@ const { createCanvas, loadImage } = canvasModule;
 /**
  * @param  {String|Buffer} src
  */
-const blurDetector = (src) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const image = await loadImage(src);
-      const canvas = createCanvas(image.width, image.height);
-      const context = canvas.getContext("2d");
-      context.drawImage(image, 0, 0);
-      const stats = measureBlur(
-        context.getImageData(0, 0, canvas.width, canvas.height)
-      );
-      resolve(stats);
-    } catch (error) {
-      reject(error);
-    }
-  });
+const blurDetector = async (src) => {
+  const image = await loadImage(src);
+  const canvas = createCanvas(image.width, image.height);
+  const context = canvas.getContext("2d");
+  context.drawImage(image, 0, 0);
+  const stats = measureBlur(
+    context.getImageData(0, 0, canvas.width, canvas.height)
+  );
+  return stats;
 };
 
 module.exports = blurDetector;

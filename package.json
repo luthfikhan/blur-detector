@@ -6,7 +6,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "canvas": "^2.9.3",
-    "canvasfilters": "https://github.com/kig/canvasfilters.git"
+    "canvas": "^2.9.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0"
   }
 }

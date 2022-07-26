@@ -1,4 +1,4 @@
-const { Filters } = require("canvasfilters");
+const Filters = require("./canvasfilters");
 
 /**
  * I forgot why exactly I was doing this.
