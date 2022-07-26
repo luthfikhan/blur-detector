@@ -7,6 +7,6 @@
   "license": "MIT",
   "dependencies": {
     "canvas": "^2.9.3",
-    "canvasfilters": "git://github.com/kig/canvasfilters.git"
+    "canvasfilters": "https://github.com/kig/canvasfilters.git"
   }
 }
