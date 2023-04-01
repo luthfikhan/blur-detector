@@ -1,4 +1,5 @@
-const Filters = require("./canvasfilters");
+import { ImageData } from 'canvas';
+import { gaussianBlur, luminance, getFloat32Array, convolve, PartialImageData } from './canvasfilters'
 
 /**
  * I forgot why exactly I was doing this.
@@ -14,22 +15,22 @@ const BLUR_BEFORE_EDGE_DETECTION_DIAMETER = 5.0; // pixels
  */
 const MIN_EDGE_INTENSITY = 20;
 
-const detectEdges = (imageData) => {
+const detectEdges = (imageData: ImageData | PartialImageData) => {
   const preBlurredImageData =
     imageData.width >= BLUR_BEFORE_EDGE_DETECTION_MIN_WIDTH
-      ? Filters.gaussianBlur(imageData, BLUR_BEFORE_EDGE_DETECTION_DIAMETER)
+      ? gaussianBlur(imageData, BLUR_BEFORE_EDGE_DETECTION_DIAMETER)
       : imageData;
 
-  const greyscaled = Filters.luminance(preBlurredImageData);
-  const sobelKernel = Filters.getFloat32Array([1, 0, -1, 2, 0, -2, 1, 0, -1]);
-  return Filters.convolve(greyscaled, sobelKernel, true);
+  const greyscaled = luminance(preBlurredImageData);
+  const sobelKernel = getFloat32Array([1, 0, -1, 2, 0, -2, 1, 0, -1]);
+  return convolve(greyscaled, sobelKernel, true);
 };
 
 /**
  * Reduce imageData from RGBA to only one channel (Y/luminance after conversion
  * to greyscale) since RGB all have the same values and Alpha was ignored.
  */
-const reducedPixels = (imageData) => {
+const reducedPixels = (imageData: ImageData | PartialImageData) => {
   const { data: pixels, width } = imageData;
   const rowLen = width * 4;
   let i,
@@ -53,7 +54,7 @@ const reducedPixels = (imageData) => {
 /**
  * @param pixels Array of Uint8ClampedArrays (row in original image)
  */
-const detectBlur = (pixels) => {
+const detectBlur = (pixels : Uint8ClampedArray[]) => {
   const width = pixels[0].length;
   const height = pixels.length;
 
@@ -112,8 +113,8 @@ const detectBlur = (pixels) => {
   };
 };
 
-const measureBlur = (imageData) => {
+const measureBlur = (imageData: ImageData | PartialImageData) => {
   return detectBlur(reducedPixels(detectEdges(imageData)));
 };
 
-module.exports = measureBlur;
+export default measureBlur;

@@ -1,25 +1,17 @@
 import { useState } from "react";
-import blurDetector from "blurdetector";
+import blurDetector, { fileToBase64 } from "blurdetector";
 import "./App.css";
 
 function App() {
   const [image, setImage] = useState(null);
   const [blurScore, setBlurScore] = useState("");
 
-  const toBase64 = (fileToConvert) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(fileToConvert);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
-
   const onFileChange = async (e) => {
-    const imageBase64 = await toBase64(e.target.files[0]);
+    const imageBase64 = await fileToBase64(e.target.files[0]);
     setImage(imageBase64);
 
-    // const result = await blurDetector(imageBase64);
-    const result = await blurDetector(e.target.files[0]);
+    const result = await blurDetector(imageBase64);
+    console.table({ result })
     setBlurScore(result.blurScore);
   };
 
