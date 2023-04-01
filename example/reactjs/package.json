@@ -11,7 +11,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "blurdetector": "https://github.com/luthfikhan/blurdetector.git"
+    "blurdetector": "file:../.."
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
